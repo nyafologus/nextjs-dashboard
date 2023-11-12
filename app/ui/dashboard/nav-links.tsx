@@ -26,7 +26,7 @@ export default function NavLinks() {
   return (
     <>
       {links.map((link) => {
-        console.log("link ->>>>", link);
+        // console.log("link ->>>>", link);
         const LinkIcon = link.icon;
         return (
           <Link
