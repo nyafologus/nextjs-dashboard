@@ -1,11 +1,12 @@
 "use client";
+import { useDebouncedCallback } from "use-debounce";
 
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 export default function Search({ placeholder }: { placeholder: string }) {
-  const handleSearch = (term: string) => {
+  const handleSearch = useDebouncedCallback((term: string) => {
     console.log(term);
-  };
+  }, 300);
   return (
     <div className="relative flex flex-1 flex-shrink-0">
       <label htmlFor="search" className="sr-only">
