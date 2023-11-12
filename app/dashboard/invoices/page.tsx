@@ -3,6 +3,7 @@ import { CreateInvoice } from "@/app/ui/invoices/buttons";
 import Pagination from "@/app/ui/invoices/pagination";
 import InvoicesTable from "@/app/ui/invoices/table";
 import Search from "@/app/ui/search";
+import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
 import React, { Suspense } from "react";
 
 export default function Page({
@@ -27,7 +28,10 @@ export default function Page({
           <CreateInvoice />
         </div>
 
-        <Suspense>
+        <Suspense
+          key={query + currentPage}
+          fallback={<InvoicesTableSkeleton />}
+        >
           <InvoicesTable
             query={query}
             currentPage={currentPage}

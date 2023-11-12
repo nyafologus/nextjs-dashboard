@@ -6,18 +6,23 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function Search({ placeholder }: { placeholder: string }) {
   const searchParams = useSearchParams();
+
+  // pathname: /dashboard/invoices
   const pathname = usePathname();
+
+  // router object with lots of methods: back(), refresh(), replace(), push() etc.
+  // const router = useRouter();
   const { replace } = useRouter();
 
   const handleSearch = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
-    console.log(`Searching... ${term}`);
-    console.log("params: ", params);
-    console.log("searchParams: ", searchParams);
-    console.log(
-      "defaultvalue from input:>>",
-      searchParams.get("query")?.toString(),
-    );
+    // console.log(`Searching... ${term}`);
+    // console.log("params: ", params);
+    // console.log("searchParams: ", searchParams);
+    // console.log(
+    //   "defaultvalue from input:>>",
+    //   searchParams.get("query")?.toString(),
+    // );
 
     if (term) {
       params.set("query", term);
