@@ -1,3 +1,4 @@
+import { fetchInvoicesPages } from "@/app/lib/data";
 import { lusitana } from "@/app/ui/fonts";
 import { CreateInvoice } from "@/app/ui/invoices/buttons";
 import Pagination from "@/app/ui/invoices/pagination";
@@ -6,7 +7,7 @@ import Search from "@/app/ui/search";
 import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
 import React, { Suspense } from "react";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
   searchParams?: {
@@ -16,6 +17,9 @@ export default function Page({
 }) {
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
+
+  const totalPages = await fetchInvoicesPages(query);
+
   return (
     <>
       <div className="w-full">
@@ -39,7 +43,7 @@ export default function Page({
         </Suspense>
 
         <div className="mt-5">
-          {/* <Pagination totalPages={totalPages} /> */}
+          <Pagination totalPages={totalPages} />
         </div>
       </div>
     </>
