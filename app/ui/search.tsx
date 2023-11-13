@@ -23,7 +23,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
     //   "defaultvalue from input:>>",
     //   searchParams.get("query")?.toString(),
     // );
-
+    params.set("page", "1");
     if (term) {
       params.set("query", term);
     } else {
