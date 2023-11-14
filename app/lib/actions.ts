@@ -14,14 +14,15 @@ const InvoiceSchema = z.object({
 const CreateInvoice = InvoiceSchema.omit({ id: true, date: true });
 
 export async function createInvoice(formData: FormData) {
-  const rawFormData = {
+  //previously rawFormData but now destructured into these 3
+  const { customerId, amount, status } = CreateInvoice.parse({
     customerId: formData.get("customerId"),
     amount: formData.get("amount"),
     status: formData.get("status"),
-  };
+  });
   // Test it out:
-  console.log(rawFormData);
+  // console.log(rawFormData);
 
-  console.log(typeof rawFormData.amount);
+  // console.log(typeof rawFormData.amount);
   // You'll notice that amount is of type string and not number. This is because input elements with type="number" actually return a string, not a number!
 }
