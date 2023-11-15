@@ -20,9 +20,16 @@ export async function createInvoice(formData: FormData) {
     amount: formData.get("amount"),
     status: formData.get("status"),
   });
+  const amountInCents = amount * 100;
   // Test it out:
   // console.log(rawFormData);
 
   // console.log(typeof rawFormData.amount);
+  // logs this to the terminal:
+  // {
+  //   customerId: 'cc27c14a-0acf-4f4a-a6c9-d45682c144b9',
+  //   amount: '666',
+  //   status: 'pending'
+  // }
   // You'll notice that amount is of type string and not number. This is because input elements with type="number" actually return a string, not a number!
 }
