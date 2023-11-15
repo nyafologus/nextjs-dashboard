@@ -2,6 +2,7 @@
 
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 // import Zod and define a schema that matches the shape of your form object
 import { z } from "zod";
 
@@ -31,6 +32,7 @@ export async function createInvoice(formData: FormData) {
   `;
 
   revalidatePath("/dashboard/invoices");
+  redirect("/dashboard/invoices");
 
   // Test it out:
   // console.log(rawFormData);
