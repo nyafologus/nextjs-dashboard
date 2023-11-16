@@ -15,6 +15,7 @@ const InvoiceSchema = z.object({
 });
 
 const CreateInvoice = InvoiceSchema.omit({ id: true, date: true });
+const UpdateInvoice = InvoiceSchema.omit({ id: true, date: true });
 
 export async function createInvoice(formData: FormData) {
   //previously rawFormData but now destructured into these 3
@@ -45,4 +46,23 @@ export async function createInvoice(formData: FormData) {
   //   status: 'pending'
   // }
   // You'll notice that amount is of type string and not number. This is because input elements with type="number" actually return a string, not a number!
+}
+
+export async function updateInvoice(id: string, formData: FormData) {
+  const { customerId, amount, status } = UpdateInvoice.parse({
+    customerId: formData.get("customerId"),
+    amount: formData.get("amount"),
+    status: formData.get("status"),
+  });
+
+  const amountInCents = amount * 100;
+
+  await sql`
+    UPDATE invoices
+    SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
+    WHERE id = ${id}
+  `;
+
+  revalidatePath("/dashboard/invoices");
+  redirect("/dashboard/invoices");
 }
