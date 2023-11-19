@@ -19,3 +19,39 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* file adds CSS rules to all the routes in your application */
 /* such as CSS reset rules, site-wide styles for HTML elements like links, and more. */
+
+/* @import url(https://db.onlinewebfonts.com/c/5a038ca921cee4b127d7c4b2c1919101?family=Wink+Script+W05+Regular); */
+
+/* @font-face {
+  font-family: "Wink Script W05 Regular";
+  src: url("https://db.onlinewebfonts.com/t/5a038ca921cee4b127d7c4b2c1919101.eot");
+  src:
+    url("https://db.onlinewebfonts.com/t/5a038ca921cee4b127d7c4b2c1919101.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/5a038ca921cee4b127d7c4b2c1919101.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/5a038ca921cee4b127d7c4b2c1919101.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/5a038ca921cee4b127d7c4b2c1919101.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/5a038ca921cee4b127d7c4b2c1919101.svg#Wink Script W05 Regular")
+      format("svg");
+} */
+
+body {
+  /* font-family: "Wink Script W05 Regular"; */
+}
+
+.swooshed {
+  -moz-font-feature-settings: "swsh"; /* low-level (old Firefox)      */
+  -webkit-font-feature-settings: "swsh"; /* low-level (old Webkit)       */
+  font-feature-settings: "swsh" on; /* low-level (all new browsers) */
+}
+
+.ss06 {
+  -moz-font-feature-settings: "ss06"; /* low-level (old Firefox)      */
+  -webkit-font-feature-settings: "ss06"; /* low-level (old Webkit)       */
+  font-feature-settings: "ss06" on; /* low-level (all new browsers) */
+}
+
+/* https://wakamaifondue.com/ */
