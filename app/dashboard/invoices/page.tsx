@@ -8,6 +8,7 @@ import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
 import React, { Suspense } from "react";
 
 import localFont from "next/font/local";
+import { WavyText } from "@/app/ui/invoices/wavyText";
 
 const winkFont = localFont({
   src: "../../../public/wink-script-regular.woff2",
@@ -33,9 +34,15 @@ export default async function Page({
         <div className="flex w-full items-center justify-between">
           {/* <h1 className={` ${lusitana.className} text-2xl`}>📜 Invoices 📜</h1> */}
 
+          {/* <WavyText
+            className={`${winkFont.className}  text-6xl`}
+            text="Awesome Wavy Text!"
+          /> */}
+
           <h1 className={`${winkFont.className}  text-6xl`}>
             📜
-            <span className="swooshed">A</span>mazing Invoice
+            <span className="swooshed">A</span>
+            mazing Invoice
             <span className="ss06">s</span>📜
           </h1>
         </div>
