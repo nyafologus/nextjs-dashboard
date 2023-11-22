@@ -18,7 +18,7 @@ export function CreateInvoice() {
         className={`${winkFont.className}  hidden  text-xl md:block`}
         text="Create Invoice"
       />
-      {/* <span className="hidden md:block">Create Invoice</span> */}{" "}
+      <span className="hidden md:block">Create Invoice</span>{" "}
       <PlusIcon className="h-5 md:ml-4" />
     </Link>
   );
