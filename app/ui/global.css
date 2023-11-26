@@ -56,13 +56,7 @@ body {
 
 /* https://wakamaifondue.com/ */
 
-.blok:nth-of-type(odd) {
-  background-color: white;
-}
-
-.blok:nth-of-type(even) {
-  background-color: black;
-}
+/*Progress credit: https://codepen.io/stijnlammerink/pen/LoWqqL */
 
 @keyframes border-transform {
   0%,
