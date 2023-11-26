@@ -142,11 +142,11 @@ body {
 .progress-wrap::after {
   position: absolute;
   font-family: "unicons";
-  content: "\e84b";
+  content: "\21E1";
   text-align: center;
   line-height: 46px;
   font-size: 24px;
-  color: rgba(0, 0, 0, 0.3); /* --- Pijl kleur --- */
+  color: rgba(0, 0, 0, 0.3); /* --- Arrow color --- */
   left: 0;
   top: 0;
   height: 46px;
@@ -163,12 +163,12 @@ body {
 .progress-wrap::before {
   position: absolute;
   font-family: "unicons";
-  content: "\e84b";
+  content: "\21E1";
   text-align: center;
   line-height: 46px;
   font-size: 24px;
   opacity: 0;
-  background: black; /* --- Pijl hover kleur --- */
+  background: black; /* --- Arrow hover color --- */
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -189,7 +189,8 @@ body {
   fill: none;
 }
 .progress-wrap svg.progress-circle path {
-  stroke: rgba(0, 0, 0, 0.2); /* --- Lijn progres kleur --- */
+  stroke: rgba(0, 0, 0, 0.2); /* --- 
+  Line progress color --- */
   stroke-width: 4;
   box-sizing: border-box;
   -webkit-transition: all 200ms linear;
